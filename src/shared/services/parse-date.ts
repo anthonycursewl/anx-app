@@ -9,23 +9,23 @@ export const calculateTimePassed = (isoString: string): string => {
     const differenceInMinutes = Math.floor(differenceInMilliseconds / (1000 * 60));
 
     if (differenceInDays > 365) {
-        return `${Math.floor(differenceInDays / 365)}y ago`
+        return `${Math.floor(differenceInDays / 365)}y`
     }
 
     if (differenceInDays > 30) {
-        return `${Math.floor(differenceInDays / 30)}m ago`
+        return `${Math.floor(differenceInDays / 30)}m`
     }
     
     if (differenceInDays > 0) {
-        return `${differenceInDays}d ago`
+        return `${differenceInDays}d`
     }
 
     if (differenceInHours > 0) {
-        return `${differenceInHours}h ago`
+        return `${differenceInHours}h`
     }
     
     if (differenceInMinutes > 0) {
-        return `${differenceInMinutes}m ago`
+        return `${differenceInMinutes}m `
     }
 
     if (differenceInMilliseconds > 0) {

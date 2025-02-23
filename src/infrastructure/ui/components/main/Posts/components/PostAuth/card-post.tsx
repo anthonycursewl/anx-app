@@ -1,5 +1,5 @@
 import './card-post.css'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 // Svgs
 import ThreePointsIcon from '../../../../../../../assets/svgs/feed/ThreePointsIcon'
@@ -25,7 +25,9 @@ import { CardPostProps } from '../../../../../../../shared/interfaces/ICardPost'
 export default function CardPost({ post, setSelectedPost }: CardPostProps) {
     const [timePassed, setTimePassed] = useState<string>('')
     const textRef = useRef<HTMLSpanElement>(null)
-    const [isShowOptions, setIsShowOptions] = useState<boolean>(false)      
+    const [isShowOptions, setIsShowOptions] = useState<boolean>(false)
+    
+    const nav = useNavigate()
     
     // Global State
     const { infoUser, setIsConfirming, setIsEditing } = useGlobalState()  
@@ -43,12 +45,12 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
 
     useEffect(() => {
         const textFormated = parseText(post.content)
-        const cleanText = dp.default.sanitize(textFormated, { ALLOWED_TAGS: ['a', 'br', 'p'] })
+        const cleanText = dp.default.sanitize(textFormated, { ALLOWED_TAGS: ['a', 'br'] })
         textRef ? textRef.current!.innerHTML = cleanText : null    
     }, [])
 
     return (
-        <div className='user-post' onClick={() => window.open(`${post.images_url[0]}`, '_blank')}>
+        <div className='user-post' onClick={() => {nav(`/post/status/${post.id}/info`)}}>
             <div className='user-profile'>
                 <img src={post.users.user_profile[0].avatar_url} alt="Profile Picture" />
             </div>
@@ -62,13 +64,17 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
                         <div className='user-post-info' onClick={(e) => e.stopPropagation()}>
 
                             <div className='user-post-verified'>
-                                <p>{post.users.name}</p>
+                                <p onClick={() => nav(`/profile/${post.users.username}`)}>{post.users.name}</p>
                                 {post.users.is_verified && <VerifiedIcon />}
                             </div>
 
-                            <span>@{post.users.username}</span>
+                            <span id='post-username'>@{post.users.username}</span>
                             <p className='user-post-dot'>·</p>
                             <span>{timePassed}</span>
+                            {
+                                post.created_at !== post.updated_at &&
+                                <aside className='user-post-is-edited'>{post.created_at !== post.updated_at ? 'e' : ''}</aside>
+                            }
                         </div>
 
                         <div className='user-post-options'>

@@ -37,7 +37,7 @@
   backdrop-filter: blur(18px);
   border-right: rgba(107, 106, 106, 0.63) 0.1px solid;
   border-left: rgba(107, 106, 106, 0.63) 0.1px solid;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media (max-width: 968px) {

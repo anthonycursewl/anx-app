@@ -16,9 +16,8 @@ import PostEdit from "./components/EditPost/PostEdit"
 import { InfoPost } from "../../../../../shared/interfaces/IPost"
 
 export default function UserPosts() {
-    const { setPosts, posts, notis, setNotis } = useGlobalState()
+    const { setPosts, posts, notis, setNotis, setSelectedPost, selectedPost } = useGlobalState()
     const [loading, setLoading] = useState<boolean>(false)
-    const [selectedPost, setSelectedPost] = useState<InfoPost>({} as InfoPost)
 
     const getPosts = async () => {
         const { data, error } = await secureFetch(`${API_URL}/posts/list`, { method: 'GET', body: null }, setLoading)

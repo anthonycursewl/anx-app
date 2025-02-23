@@ -18,3 +18,7 @@ body {
   background: black;
   color-scheme: dark light;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

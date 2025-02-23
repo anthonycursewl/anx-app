@@ -1,5 +1,5 @@
 import './main-p.css'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
 
 // Svgs
 import HomeIcon from '../../../../assets/svgs/side-nav/HomeIcon'
@@ -13,11 +13,11 @@ import { useGlobalState } from '../../../../shared/utils/GlobalState'
 // @ts-ignore
 import { IUser } from '../../../../shared/interfaces/IUser'
 
-import NotificationPop from '../../../../shared/components/Notifications/NotificationPop'
 
 export default function MainP() {
     const { pathname } = useLocation() 
     const { loadingData, isAuthenticated, infoUser } = useGlobalState()
+    const { username } = useParams()
 
     const projectsMockup = [
         { 
@@ -97,7 +97,7 @@ export default function MainP() {
                     </div>
 
                     <div className='main-info-side-nav'>
-                        <Link to={""}>
+                        <Link to={"/feed"}>
                             <div className='main-info-side-nav-icon'>
                                 <HomeIcon />
                             </div>
@@ -130,8 +130,14 @@ export default function MainP() {
 
             <div className='main-p--info'>
                 <div className='main-p--box'>
-                    <a className={`box-site ${pathname === '/feed' ? 'box-site-active' : ''}`}><p>For you</p></a>
-                    <a className={`box-site ${pathname.includes('/projects') ? 'box-site-active' : ''}`}><p>Projects</p></a>
+                    {
+                        pathname.includes('/profile') ?
+                        <a className={`box-site ${pathname.includes('/profile') ? 'box-site-active' : ''}`}><p>{username}</p></a> :
+                        <>
+                            <a className={`box-site ${pathname === '/feed' ? 'box-site-active' : ''}`}><p>For you</p></a>
+                            <a className={`box-site ${pathname.includes('/projects') ? 'box-site-active' : ''}`}><p>Projects</p></a>
+                        </>
+                    }
                 </div>
                 
                 <Outlet /> 
@@ -176,7 +182,6 @@ export default function MainP() {
                 </div>                 
             </div>
         
-            <NotificationPop />
         </section>
     )
 }

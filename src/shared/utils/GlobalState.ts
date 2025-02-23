@@ -27,6 +27,12 @@ interface GlobalState {
     setIsEditing: (isEditing: boolean) => void;   
     notis: ITypeNotification[];
     setNotis: (notis: Array<ITypeNotification>) => void;
+    selectedPost: InfoPost;
+    setSelectedPost: (selectedPost: InfoPost) => void;
+    somethingChanged: boolean;
+    setSomethingChanged: (somethingChanged: boolean) => void;
+    isEditingProfile: boolean;
+    setIsEditingProfile: (isEditingProfile: boolean) => void
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -46,4 +52,10 @@ export const useGlobalState = create<GlobalState>((set) => ({
     setIsEditing: (isEditing: boolean) => set({ isEditing }),
     notis: Array<ITypeNotification>(),
     setNotis: (notis: ITypeNotification[]) => set({ notis }),
+    selectedPost: {} as InfoPost,
+    setSelectedPost: (selectedPost: InfoPost) => set({ selectedPost }),
+    somethingChanged: false,
+    setSomethingChanged: (somethingChanged: boolean) => set({ somethingChanged }),
+    isEditingProfile: false,
+    setIsEditingProfile: (isEditingProfile: boolean) => set({ isEditingProfile })
 }))

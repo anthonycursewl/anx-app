@@ -1,0 +1,369 @@
+.anx-show-portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.anx--d {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    position: absolute;
+    background: linear-gradient(30deg, #16203bc9, #7038b1af);
+    filter: blur(130px);
+    left: -35px;
+    top: -30px;
+}
+
+.anx--img {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: -200px;
+    top: -130px;
+    mask-image: linear-gradient(to top, black 80%, transparent 100%);
+    transform: rotate(-140deg);
+    opacity: .5;
+    z-index: 1;
+}
+
+
+
+.anx-show-portfolio-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    flex-direction: column;
+}
+
+.anx-p-greetings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 65%;
+    color: rgb(238, 238, 238);
+    margin-top: 10rem;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.anx-p-greetings img {
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(90, 90, 90, 0.63);
+}
+
+.anx-p-greetings span {
+    font-weight: bold;
+    background-clip: text;
+    color: transparent;
+    background: linear-gradient(to right, #832cf5, #2ac8f8, #f5c62c, #2af8e7);
+    -webkit-background-clip: text;
+}
+
+.anx-all-dec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anx-p-description {
+    width: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    color: rgb(238, 238, 238);
+    font-size: 1rem;
+    gap: 1.5rem;
+}
+
+.anx--roadmap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 800px;
+    margin-bottom: 3rem;
+}
+
+.anx--roadmap-content h2 {
+    background: linear-gradient(to right, #832cf5, #2ac8f8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.4rem;
+    width: fit-content;
+}
+
+.anx--roadmap-content p {
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+.anx--roadmap-diagram {
+    width: 100%;
+    position: relative;
+}
+
+.anx--roadmap-diagram img {
+    width: 100%;
+    height: auto;
+    opacity: .1;
+    position: absolute;
+    top: -50px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.anx--roadmap-diagram-title {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.anx--roadmap-diagram-title-icon span {
+    border: 1px solid #615374;
+    padding: .3rem .8rem;
+    border-radius: 50%;
+    font-size: .9rem;
+    width: 32px;
+    height: 32px;
+    color: #6f629ec9;
+}
+
+.anx--roadmap-diagram-title-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.anx--roadmap-line {
+    width: fit-content;
+    height: fit-content;
+    border-left: 1px solid #615374;
+    margin-left: 1rem;
+}
+
+.anx-title-route {
+    padding: 2rem 1.8rem;
+    padding-top: .8rem;
+}
+
+.anx-title-route h3 {
+    font-size: 1.1rem;
+    color: #eeeeee;
+}
+
+.anx-title-route p {
+    font-size: .9rem;
+    color: #eaebecc9;
+}
+
+.anx--skills {
+    width: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.anx-p-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.anx-p-contact img {
+    width: 20px;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.anx-p-contact a, button {
+    color: #eaebecc9;
+    text-decoration: none;
+    font-size: .8rem;
+    border: 1px solid #61537448;
+    background: linear-gradient(30deg, #3a24524f, #2d253846);
+    padding: .4rem .8rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    cursor: pointer;
+    font-family: 'Onest', sans-serif;
+}
+
+@media (max-width: 1168px) {
+    .anx--img {
+        opacity: .3;
+        width: 420px;
+    }
+
+    .anx-p-greetings {
+        width: 95%;
+        margin-top: 8rem;
+    }
+
+    .anx-p-description {
+        width: 100%;
+    }
+
+    .anx--roadmap {
+        width: 100%;
+    }
+
+    .anx--skills {
+        width: 100%;
+    }
+
+    #anx-hello {
+        font-size: 1.6rem;
+    }
+}
+
+/* COMPONENT ICON SKILLS */
+
+.anx--skill-icon {
+    background: linear-gradient(30deg, #3a24524f, #2d253846);
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(92, 64, 126, 0.274);
+    position: relative;
+    overflow: hidden;
+}
+
+.anx--skills-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.anx--skill-icon svg {
+    width: 60px;
+    height: auto;
+}
+
+.anx--skill-icon img {
+    width: 60px;
+    height: auto;
+    border-radius: 0;
+    border: none;
+}
+
+#anx-icon-to-move {
+    position: absolute;
+    width: 100%;
+    border-radius: 0;
+    top: 40%;
+    right: 40%;
+    z-index: -1;
+    object-fit: cover;
+    pointer-events: none;
+    transform: rotate(-30deg);
+}
+
+/* COMPONENT ICON SKILLS */
+
+/* STYLE PROJECTS */
+
+.anx--projects {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 800px;
+    overflow: hidden;
+}
+
+.anx-projects-cards {
+    margin-top: 1rem;
+}
+
+@media (max-width: 1168px) {
+    .anx--projects {
+        width: 100%;
+    }
+}
+
+.anx-card-project-content {
+    display: grid;
+    gap: .7rem;
+    width: 100%;
+}
+
+.anx-card-project-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
+.anx-card-project-title span {
+    padding: .2rem .4rem;
+    font-size: .6rem;
+    background: #111111;
+    border-radius: 12px;
+    color: rgb(211, 211, 211);
+}
+
+.anx-card-project-title h3 {
+    font-size: 1.4rem;
+    background: linear-gradient(to right, #e562ff, #805ff7, #e4d2ff, #b79ff8);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.anx-card-project-content p {
+    font-size: 1rem;
+    color: #eaebecc9;
+}
+
+.anx-card-project-img {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    overflow: auto;
+    cursor: grab;
+}
+
+.anx-card-project-img::-webkit-scrollbar {
+    display: none;
+}
+
+.anx-card-project-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #61537448;
+}
+
+/* STYLE PROJECTS */

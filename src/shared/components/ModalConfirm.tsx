@@ -18,13 +18,14 @@ type ModalConfirmProps = {
 }
 
 export default function ModalConfirm({ options }: ModalConfirmProps) {
-    const { isConfirming, setIsConfirming } = useGlobalState()
+    const { isConfirming, setIsConfirming, setSomethingChanged, somethingChanged } = useGlobalState()
     const [_, setLoading] = useState<boolean>(false)
 
     const handleConfirm = async () => {
         setLoading(true)
         await options.onConfirm()
         setLoading(false)
+        setSomethingChanged(!somethingChanged)
         setIsConfirming(false)
     }
 

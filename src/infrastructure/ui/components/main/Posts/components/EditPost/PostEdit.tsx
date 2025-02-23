@@ -38,7 +38,7 @@ export default function PostEdit({ post }: PostEditProps) {
             return
         }
 
-        const { data, error } = await secureFetch(`${API_URL}/posts/update/${post.id}`, { method: 'PUT', body: { content: content, updated_at: new Date().toISOString() }, stringify: true, content_type: 'application/json' }, setLoading)
+        const { data, error } = await secureFetch(`${API_URL}/posts/update/${post.id}`, { method: 'PUT', body: { content: content, updated_at: new Date().toISOString(), user_id: post.users.id }, stringify: true, content_type: 'application/json' }, setLoading)
 
         if (error) {
             console.log(error)

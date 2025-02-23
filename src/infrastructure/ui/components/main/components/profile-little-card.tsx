@@ -9,6 +9,7 @@ import { useState } from 'react';
 // Svgs
 import LogoutIcon from '../../../../../assets/svgs/profile/LogoutIcon';
 import ReportIcon from '../../../../../assets/svgs/post/ReportIcon';
+import { useNavigate } from 'react-router-dom';
 
 interface ProfileLittleCardProps {
     username: string;
@@ -19,6 +20,7 @@ interface ProfileLittleCardProps {
 
 export default function ProfileLittleCard({ username, name, profileImageUrl, isVerified }: ProfileLittleCardProps) {
   const [showOptions, setShowOptions] = useState(false);
+  const nav = useNavigate(); 
 
   return (
     <div className="main-info-side-profile" onClick={() => {setShowOptions(false)}}>
@@ -31,7 +33,7 @@ export default function ProfileLittleCard({ username, name, profileImageUrl, isV
       <div className="main-info-side-profile-content">
         <div className="main-info-side-profile-info">
           <div className="profile-side-verified">
-            <p>{name}</p>
+            <p onClick={() => nav(`/profile/${username}`)}>{name}</p>
             {isVerified && <VerifiedIcon />}
           </div>
           <span>@{username}</span>
@@ -45,8 +47,9 @@ export default function ProfileLittleCard({ username, name, profileImageUrl, isV
 
         <div className={`main-modal-info-profile ${showOptions ? 'active' : ''}`}>
           <div className='main-modal-info-profile-options'>
+
             <ul className='main-m-options-list'>
-              <li>
+              <li onClick={() => nav(`/profile/${username}`)}>
                 <ReportIcon />
                 
                 <div className='option-list-info'>
@@ -65,6 +68,7 @@ export default function ProfileLittleCard({ username, name, profileImageUrl, isV
                 </div>
               </li>
             </ul>
+
           </div>
         </div>
       </div>

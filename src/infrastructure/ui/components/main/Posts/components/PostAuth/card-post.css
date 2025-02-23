@@ -27,8 +27,10 @@
 }
 
 .user-post-image img {
-    width: 99%;
+    width: 100%;
+    max-height: 700px;
     border-radius: 1.2rem;
+    object-fit: cover;
     border: 1.2px solid rgba(107, 106, 106, 0.63);
 }
 
@@ -36,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
 }
 
 .user-post-info {
@@ -43,6 +46,15 @@
     align-items: center;
     justify-content: center;
     gap: .4rem;
+}
+
+.user-post-info #post-username {
+    min-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    
 }
 
 .user-post-info span {
@@ -174,6 +186,14 @@
     border-radius: 12px;
     border: 1px solid rgba(87, 86, 86, 0.63);
     z-index: 1;
+}
+
+.user-post-is-edited {
+    color: #b08adf;
+    background: #242424a1;
+    padding: .2rem .4rem;
+    font-size: .8rem;
+    border-radius: 10px;
 }
 
 .modal-menu-options {
