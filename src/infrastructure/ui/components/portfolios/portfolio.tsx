@@ -93,6 +93,7 @@ export default function Portfolio() {
                                 </div>
                                 
                                 <SliderImages images={bitter} />
+                                <br />
                             </div>
 
                             <div className='anx-card-project'>
@@ -101,8 +102,7 @@ export default function Portfolio() {
                                         <h3>Force Gym</h3>
                                         <span>v0.0.1</span>
                                     </div>
-                                    <p>Bitter is a web application that allows you to save contacts, images, and poems, all in one place. It uses a system of smart links to share your poems and images.
-                                        In its upcoming update Bitter will have a ticket system to manage your events, projects, and more. 
+                                    <p>FORCEGYM App is an application for managing the services of a gym, and to offer users a section where they can see the latest news and see the packages offered by the gym itself. There're also sections of information so that users can contact the trainer they like and get detailed information. 
                                     </p>
                                 </div>
                                 
