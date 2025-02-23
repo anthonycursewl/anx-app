@@ -212,6 +212,10 @@
     font-family: 'Onest', sans-serif;
 }
 
+#anx-hello {
+    text-align: center;
+}
+
 @media (max-width: 1168px) {
     .anx--img {
         opacity: .3;
@@ -237,6 +241,7 @@
 
     #anx-hello {
         font-size: 1.6rem;
+        text-align: left;
     }
 }
 

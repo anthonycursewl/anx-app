@@ -51,7 +51,7 @@ export default function Portfolio() {
 
                 <div className='anx-p-greetings'>
                     {/* <img src={profilePic} alt="Anthony Zerpa Profile Picture" /> */}
-                    <h1 style={{ textAlign: 'center' }} id='anx-hello'>Hello👋🏻, I'm Anthony Zerpa, <br />a <span>Full-stack developer.</span></h1>
+                    <h1 id='anx-hello'>Hello👋🏻, I'm Anthony Zerpa, <br />a <span>Full-stack developer.</span></h1>
 
                     <div className='anx-p-contact'>
                         <a href="" download={true}>
