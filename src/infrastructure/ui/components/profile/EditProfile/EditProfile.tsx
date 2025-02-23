@@ -1,7 +1,6 @@
 import './EditProfile.css'
 import { createPortal } from "react-dom"
 import { useGlobalState } from "../../../../../shared/utils/GlobalState"
-import { useEffect } from 'react'
 import { IProfile } from '../../../../../shared/interfaces/IProfile'
 
 interface EditProfileProps {
