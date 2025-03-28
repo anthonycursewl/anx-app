@@ -9,6 +9,7 @@ export default function CardSkill({ imgSquare, path, alt }: CardSkillProps) {
     <div className="anx--skill-icon">
       <img src={imgSquare} alt="Square Img" id="anx-icon-to-move" />
       <img src={path} alt={alt} />
+      <img src={imgSquare} alt="Square Img" id="anx-icon-to-move-2"/>
     </div>
   );
 }

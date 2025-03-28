@@ -289,6 +289,20 @@
     object-fit: cover;
     pointer-events: none;
     transform: rotate(-30deg);
+    opacity: .2;
+}
+
+#anx-icon-to-move-2 {
+    position: absolute;
+    width: 100%;
+    border-radius: 0;
+    top: -40%;
+    left: 40%;
+    z-index: -1;
+    object-fit: cover;
+    pointer-events: none;
+    transform: rotate(30deg);
+    opacity: .2;
 }
 
 /* COMPONENT ICON SKILLS */

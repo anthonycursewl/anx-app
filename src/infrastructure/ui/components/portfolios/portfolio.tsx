@@ -39,13 +39,13 @@ export default function Portfolio() {
 
     const imgTest = 'https://freepngimg.com/save/69350-decorative-magic-purple-light-beam-icon/690x460'
 
-    const imgSquare = 'https://www.pngkit.com/png/full/437-4374751_aesthetic-grid-gridoverlay-overlay-tumblr-grunge-altern-white.png'
+    const imgSquare = '/placeholder/square_idk.webp'
 
     return (
         <section className='anx-show-portfolio'>
             <div className='anx--d'>
             </div>
-            <img src={imgTest} alt="Image Test" className='anx--img'/>
+            {/* <img src={bitter} alt="Bitter" className='anx--img' /> */}
 
             <div className='anx-show-portfolio-content'>
 
