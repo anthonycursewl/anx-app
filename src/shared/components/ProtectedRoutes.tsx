@@ -22,7 +22,7 @@ export default function ProtectedRoutes({ children }: { children: ReactNode }) {
     }
 
     useEffect(() => {
-        //verifyToken()
+        verifyToken()
     }, [])
 
     if (loadingData === null || isAuthenticated === null) {
