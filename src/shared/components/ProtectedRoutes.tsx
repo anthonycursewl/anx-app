@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { useGlobalState } from "../utils/GlobalState";
 import { secureFetch } from "../../infrastructure/api/secureFetch";
 import { API_URL } from "../../config/anx.config.breadriuss";
+import HandleLoading from "./Loaders/HandleLoading";
 
 export default function ProtectedRoutes({ children }: { children: ReactNode }) {
     const { setIsAuthenticated, loadingData, setLoadingData, isAuthenticated, setInfoUser } = useGlobalState()
@@ -21,15 +22,15 @@ export default function ProtectedRoutes({ children }: { children: ReactNode }) {
     }
 
     useEffect(() => {
-        verifyToken()
+        //verifyToken()
     }, [])
 
     if (loadingData === null || isAuthenticated === null) {
-        return <div>Loading...</div>
+        return <HandleLoading />
     }
-
+    
     if (loadingData) {
-        return <div>Loading...</div>
+        return <HandleLoading />
     }
 
     return <>{children}</>
