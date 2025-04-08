@@ -64,7 +64,7 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
                         <div className='user-post-info' onClick={(e) => e.stopPropagation()}>
 
                             <div className='user-post-verified'>
-                                <p onClick={() => nav(`/profile/${post.users.username}`)}>{post.users.name}</p>
+                                <p onClick={() => nav(`/profile/@${post.users.username}`)}>{post.users.name}</p>
                                 {post.users.is_verified && <VerifiedIcon />}
                             </div>
 

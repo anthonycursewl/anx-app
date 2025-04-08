@@ -56,13 +56,11 @@ export default function PostAuth({ options_auth }: ICreatePost) {
     if (error) {
       setLoading(false);
       setNotis([...notis, { message: error, type: "error", options: { isLoading: true } }]);
-      console.log(error);
       return;
     }
 
     if (data) {
       setLoading(false);
-      console.log(data);
       setNotis([...notis, { message: "Post has been created correctly.", type: "success", options: { isLoading: true } }]);
     }
 

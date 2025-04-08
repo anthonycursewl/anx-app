@@ -45,7 +45,7 @@
 
 @media (max-width: 668px) {
     .profile-avatar img {
-        left: 15%;
+        left: 18%;
     }
 }
 
@@ -183,9 +183,9 @@
 
 @media (max-width: 468px) {
     .profile-avatar img {
-        left: 16%;
-        width: 100px;
-        height: 100px;
+        left: 18%;
+        width: 120px;
+        height: 120px;
         top: 95px;
         border: 2.5px solid rgb(0, 0, 0);
     }

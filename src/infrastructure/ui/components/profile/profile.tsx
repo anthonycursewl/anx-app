@@ -48,7 +48,7 @@ export default function Profile() {
 
 
     const fetchUser = async () => {
-        const { data, error } = await useFetch(`${API_URL}/user/profile/${username}`, 'GET', null, setLoading)
+        const { data, error } = await useFetch(`${API_URL}/user/profile/${username?.split('@')[1]}`, 'GET', null, setLoading)
 
         if (error) {
             console.log(error)

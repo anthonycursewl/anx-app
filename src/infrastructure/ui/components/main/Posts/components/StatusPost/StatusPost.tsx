@@ -81,7 +81,7 @@ export default function StatusPost() {
                     <div className='status-post-header'>
                         <div className='status-post-content-info'>
                             <div className='status-post-content-name'>
-                                <h3 onClick={() => {nav(`/profile/${post && post.users.username}`)}}>{post && post.users.name}</h3>
+                                <h3 onClick={() => {nav(`/profile/@${post && post.users.username}`)}}>{post && post.users.name}</h3>
                                 {post && post.users.is_verified && <VerifiedIcon />}
                             </div>
                             <span>@{post && post.users.username}</span>

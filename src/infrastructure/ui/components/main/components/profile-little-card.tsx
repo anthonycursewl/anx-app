@@ -33,7 +33,7 @@ export default function ProfileLittleCard({ username, name, profileImageUrl, isV
       <div className="main-info-side-profile-content">
         <div className="main-info-side-profile-info">
           <div className="profile-side-verified">
-            <p onClick={() => nav(`/profile/${username}`)}>{name}</p>
+            <p onClick={() => nav(`/profile/@${username}`)}>{name}</p>
             {isVerified && <VerifiedIcon />}
           </div>
           <span>@{username}</span>
@@ -49,7 +49,7 @@ export default function ProfileLittleCard({ username, name, profileImageUrl, isV
           <div className='main-modal-info-profile-options'>
 
             <ul className='main-m-options-list'>
-              <li onClick={() => nav(`/profile/${username}`)}>
+              <li onClick={() => nav(`/profile/@${username}`)}>
                 <ReportIcon />
                 
                 <div className='option-list-info'>

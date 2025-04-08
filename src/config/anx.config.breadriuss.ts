@@ -5,7 +5,7 @@ const config = {
     api_version: 'v1',
     entity: 'anx',
     type: 'api',
-    url: 'https://anx-app-backend-production.up.railway.app'
+    url: 'https://anx-api.breadriuss.com'
 }
 
 export const API_URL = `${config.url}/${config.type}/${config.entity}/${config.api_version}`;

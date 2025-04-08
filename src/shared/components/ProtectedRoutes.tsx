@@ -11,7 +11,6 @@ export default function ProtectedRoutes({ children }: { children: ReactNode }) {
         const { data, error } = await secureFetch(`${API_URL}/auth/verify`, { method: 'GET', body: null }, setLoadingData)
 
         if (error) {
-            console.error(error)
             setIsAuthenticated(false)
         }
 

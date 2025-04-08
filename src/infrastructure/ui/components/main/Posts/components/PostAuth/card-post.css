@@ -48,13 +48,21 @@
     gap: .4rem;
 }
 
-.user-post-info #post-username {
-    min-width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    vertical-align: middle;
-    
+@media (max-width: 468px) {
+    .user-post-info #post-username {
+        display: block;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .user-post-verified p {
+        max-width: 129px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 .user-post-info span {

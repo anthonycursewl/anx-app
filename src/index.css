@@ -16,7 +16,7 @@ body {
 :root {
   font-family: 'Onest', system-ui, sans-serif;
   background: black;
-  color-scheme: dark light;
+  color-scheme: dark;
 }
 
 body::-webkit-scrollbar {
