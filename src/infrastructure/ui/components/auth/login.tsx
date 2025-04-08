@@ -1,16 +1,12 @@
 import { FormEvent, RefObject, useRef, useState } from 'react'
 import './login.css'
-
 import { Link } from 'react-router-dom'
-
 // Svgs
 import PasswordIcon from '../../../../assets/svgs/login/PasswordIcon'
 import EmailIcon from '../../../../assets/svgs/login/EmailIcon'
-
 // Services
 import { useFetch } from '../../../api/useFetch'
 import { API_URL } from '../../../../config/anx.config.breadriuss'
-
 // hooks 
 import { useNavigate } from 'react-router-dom'
 
@@ -39,13 +35,10 @@ export default function LoginComponent() {
             }, setLoading)
 
             if (error) {
-                console.log(error)
-                console.log
                 return
             }
 
             if (data) {
-                console.log(data)
                 nav('/feed')
             }
         }
@@ -113,7 +106,7 @@ export default function LoginComponent() {
 
                         <div className='login-button'>
                             {
-                                loading ? 'Loading' :
+                                loading ? <div className='loading-spin'></div> :
                                 <button>Log in</button>
                             }
                         </div>

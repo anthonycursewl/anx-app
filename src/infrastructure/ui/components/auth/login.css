@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    width: 100%;
 }
 
 .login-content {
@@ -171,7 +173,7 @@
     }
 
     .login-inputs {
-        width: 90%;
+        width: 100%;
     }
 
     .login-title {
@@ -198,29 +200,36 @@
 }
 
 @media (max-width: 968px) {
+
     .login-content-lines {
         width: 95%;
-        flex-direction: column;
-        gap: 2rem;
+        height: 250vh;
+        flex-direction: column-reverse;
     }
 
     .login-title {
         width: 90%;
         padding: 0rem;
+        margin-bottom: 10rem;
     }
 
     .login-form {
         width: 90%;
+        margin-top: 20rem;
+        margin-bottom: 55rem;
+        transform: translateY(36rem);
     }
 
     .login-line-horizontal-top {
         width: 100%;
         left: 0%;
+        top: 32%;
     }
 
     .login-line-horizontal-bottom {
         width: 100%;
         left: 0%;
+        top: 65%;
     }
 
     .login-title-description p {
