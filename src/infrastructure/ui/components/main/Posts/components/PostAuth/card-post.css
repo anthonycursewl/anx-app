@@ -169,7 +169,18 @@
     gap: .2rem;
 }
 
+.user-post-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
 @media (max-width: 468px) {
+    .user-post {
+        padding: .9rem;
+    }
+
     .user-post-verified {
         gap: 0;
     }
@@ -182,7 +193,7 @@
 
     .user-post-info #post-username {
         display: block;
-        max-width: 70px;
+        max-width: 90px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

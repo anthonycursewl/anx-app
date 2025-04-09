@@ -67,14 +67,12 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
                                 <p onClick={() => nav(`/profile/@${post.users.username}`)}>{post.users.name}</p>
                                 {post.users.is_verified && <VerifiedIcon />}
                             </div>
-
-                            <span id='post-username'>@{post.users.username}</span>
-                            <p className='user-post-dot'>·</p>
-                            <span>{timePassed}</span>
-                            {
-                                post.created_at !== post.updated_at &&
-                                <aside className='user-post-is-edited'>{post.created_at !== post.updated_at ? 'e' : ''}</aside>
-                            }
+                            
+                            <div className='user-post-details'>
+                                <span id='post-username'>@{post.users.username}</span>
+                                <p className='user-post-dot'>·</p>
+                                <span>{timePassed}</span>
+                            </div>
                         </div>
 
                         <div className='user-post-options'>
