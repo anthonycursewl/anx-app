@@ -29,7 +29,7 @@ export const calculateTimePassed = (isoString: string): string => {
     }
 
     if (differenceInMilliseconds > 0) {
-        return `Just now`
+        return `${Math.floor(differenceInMilliseconds / 1000)}s`
     }
 
     return ''
