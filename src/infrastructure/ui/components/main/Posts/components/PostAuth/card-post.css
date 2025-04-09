@@ -173,12 +173,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .4rem;
+    gap: .3rem;
 }
 
 @media (max-width: 468px) {
     .user-post {
         padding: .9rem;
+    }
+
+    .user-post-details {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .user-post-verified {
@@ -187,20 +193,18 @@
 
     .user-post-info {
         gap: .3rem;
-        flex-wrap: wrap;
-        justify-content: flex-start;
     }
 
     .user-post-info #post-username {
         display: block;
-        max-width: 70px;
         overflow: hidden;
+        width: 70px;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
 
     .user-post-verified p {
-        max-width: 120px;
+        max-width: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
