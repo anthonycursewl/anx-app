@@ -178,7 +178,7 @@
 
 @media (max-width: 468px) {
     .user-post {
-        padding: .9rem;
+        padding: .9rem .8rem;
     }
 
     .user-post-details {
