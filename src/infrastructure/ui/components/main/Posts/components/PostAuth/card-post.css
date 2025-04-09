@@ -193,7 +193,7 @@
 
     .user-post-info #post-username {
         display: block;
-        max-width: 90px;
+        max-width: 70px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
