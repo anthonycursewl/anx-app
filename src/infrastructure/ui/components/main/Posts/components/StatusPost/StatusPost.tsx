@@ -35,27 +35,26 @@ export default function StatusPost() {
         const { data, error } = await secureFetch(`${API_URL}/posts/get/${id_post}`, { method: 'GET', body: null, stringify: false, content_type: 'application/json' }, setLoading) 
 
         if (error) {
-            console.log(error)
-            return 
+            setNotis([...notis, { message: error || "Error getting post", type: "error", options: { isLoading: true } }])
         }
 
         if (data) {
+            if (data.length === 0) {
+                return nav('/feed')
+            }
             setPost(data)
-            console.log(data)
         }
     }
 
     const handleDeletePost = async () => {
         const { data, error } = await secureFetch(`${API_URL}/posts/delete/${post?.id}`, { method: 'DELETE', body: null, stringify: false }, () => {})
         if (error) {
-            console.log(error)
             setNotis([...notis, { message: error || "Error deleting post", type: "error", options: { isLoading: true } }])
             return
         }
 
         if (data) {
             setNotis([...notis, { message: "Post deleted successfully", type: "success", options: { isLoading: true } }])
-            console.log(data)
         }
     }
 
@@ -74,7 +73,9 @@ export default function StatusPost() {
             {
             !loading ?
             <>
-            <div className='status-post-content'>
+            {
+                post ?
+                <div className='status-post-content'>
                 <div className='status-post-front'>
                     <img src={post ? post.users.user_profile[0].avatar_url : '/no-profile-pic.webp'} alt={`${post && post.users.name}'s profile picture`} />
 
@@ -100,7 +101,7 @@ export default function StatusPost() {
                             
                             {
                                 showStatusOptions && (
-                                <div className='status-post-options'>
+                                    <div className='status-post-options'>
                                     <ul>
                                         {
                                         isAuthenticated &&
@@ -133,12 +134,12 @@ export default function StatusPost() {
                 
                 <div className='status-post-image'>
                     {
-                       post ? post.images_url.length > 0 && 
-                       <img src={post ? post.images_url[0] : ''} alt={`${post && post.users.name}'s profile picture`} /> : ''
+                        post ? post.images_url.length > 0 && 
+                        <img src={post ? post.images_url[0] : ''} alt={`${post && post.users.name}'s profile picture`} /> : ''
                     }
                 </div>
-            </div>
-
+            </div> : null
+        }   
             <div className='status-post-comments'>
                 <span>Comments aren't available yet.</span>
             </div> 
