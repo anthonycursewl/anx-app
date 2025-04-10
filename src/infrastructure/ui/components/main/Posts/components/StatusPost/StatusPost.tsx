@@ -26,7 +26,7 @@ import { useGlobalState } from '../../../../../../../shared/utils/GlobalState'
 export default function StatusPost() {
     const { id_post } = useParams()
     const [loading, setLoading] = useState<boolean>(true)
-    const [post, setPost] = useState<InfoPost>()
+    const [post, setPost] = useState<InfoPost>({} as InfoPost)
     const [showStatusOptions, setStatusOptions] = useState<boolean>(false)
     const { setIsEditing, setNotis, notis, setIsConfirming, isAuthenticated } = useGlobalState()
     const nav = useNavigate()
@@ -73,8 +73,6 @@ export default function StatusPost() {
             {
             !loading ?
             <>
-            {
-                post ?
                 <div className='status-post-content'>
                 <div className='status-post-front'>
                     <img src={post ? post.users.user_profile[0].avatar_url : '/no-profile-pic.webp'} alt={`${post && post.users.name}'s profile picture`} />
@@ -138,8 +136,7 @@ export default function StatusPost() {
                         <img src={post ? post.images_url[0] : ''} alt={`${post && post.users.name}'s profile picture`} /> : ''
                     }
                 </div>
-            </div> : null
-        }   
+            </div>
             <div className='status-post-comments'>
                 <span>Comments aren't available yet.</span>
             </div> 
