@@ -65,7 +65,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 1.  **Clona el repositorio:**
     ```bash
-    # Backend
+    # Backend (por ahora el acceso al backend es privado, ya que se busca llegar a una versión estable para aceptar contribución)
     git clone https://github.com/anthonycursewl/anx-app-backend.git
     cd anx-app-backend
 
