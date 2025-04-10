@@ -55,8 +55,8 @@ Este proyecto está construido utilizando las siguientes tecnologías:
 
 ## ¿Como contribuir al proyecto?
 
-*   **Donaciones:** Puedes hacer donaciones si te agrada el proyecto y el enfoque que tiene.
-*   **Feedback del proceso actual:** El feedback para poder mejorar la experiencia de usuario es fundamental. No es necesario que seas un ingeniero de software o programador, simplemente puedes exponer tus puntos y ayudarnos a que este proyecto se adapte a las verdaderas necesidades de quienes lo usan, y por supuesto que **NUNCA** pierda su propósito incial.
+*   **Donaciones:** Puedes hacer donaciones si te agrada el proyecto y el enfoque que tiene (pronto se adjuntará el link).
+*   **Feedback del proceso actual:** El feedback para poder mejorar la experiencia de usuario es fundamental. No es necesario que seas un ingeniero de software o programador, simplemente puedes exponer tus puntos y ayudarnos a que este proyecto se adapte a las verdaderas necesidades de quienes lo usan, y por supuesto que **NUNCA** pierda su propósito incial. Contact `contact@breadriuss.com`
 * **Contribuyendo al desarrollo:** Este repositorio busca presentar el proyecto de código abierto para permitir a esos desarrolladores que se encuentren haciendo vida en la misma app, puedan contribuir y ayudarnos a mejorar lo que hasta hoy es **Anx**. 
 
 ## 🚀 Empezando (Desarrollo Local)
