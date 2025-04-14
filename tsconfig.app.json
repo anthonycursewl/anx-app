@@ -7,9 +7,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "composite": true,
-    "noEmit": true,
+    "noEmit": false,
+    "outDir": "./dist",
 
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     /* Bundler mode */
     "moduleResolution": "bundler",
     "isolatedModules": true,
@@ -23,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "vite-env.d.ts"]
 }
