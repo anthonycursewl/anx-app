@@ -5,13 +5,17 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "composite": true, 
-    "noEmit": true,
+    "composite": true,
+    "outDir": "./dist",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
+    "baseUrl": ".",
+    "paths": {
+      "rollup/parseAst": ["./node_modules/rollup/dist/parseAst.d.ts"]
+    },
 
     /* Linting */
     "strict": true,
