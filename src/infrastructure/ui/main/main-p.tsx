@@ -2,23 +2,13 @@ import './main-p.css'
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
 
 // Svgs
-<<<<<<< HEAD:src/infrastructure/ui/main/main-p.tsx
 import HomeIcon from '../../../assets/svgs/side-nav/HomeIcon'
 import ProjectIcon from '../../../assets/svgs/side-nav/ProjectIcon'
-=======
-import HomeIcon from '../../../../assets/svgs/side-nav/HomeIcon'
-import ProjectIcon from '../../../../assets/svgs/side-nav/ProjectIcon'
->>>>>>> parent of 41e522f ([refactor] change imports):src/infrastructure/ui/components/main/main-p.tsx
 
 // Components
 // @ts-ignore
 import ProfileLittleCard from './components/profile-little-card'
-<<<<<<< HEAD:src/infrastructure/ui/main/main-p.tsx
 import { useGlobalState } from '../../../shared/utils/GlobalState'
-=======
-import { useGlobalState } from '../../../../shared/utils/GlobalState'
-
->>>>>>> parent of 41e522f ([refactor] change imports):src/infrastructure/ui/components/main/main-p.tsx
 // @ts-ignore
 import { IUser } from '../../../../shared/interfaces/IUser'
 
