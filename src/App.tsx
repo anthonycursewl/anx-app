@@ -7,7 +7,7 @@ import HandleLoading from './shared/components/Loaders/HandleLoading'
 
 // Components
 const MainP = lazy(() => import('./infrastructure/ui/main/main-p'))
-const LoginComponent =  lazy(() => import('./infrastructure/ui/auth/login'))
+const LoginComponent =  lazy(() => import('./infrastructure/ui/components/auth/login'))
 const UserPosts = lazy(() => import('./infrastructure/ui/main/Posts/user-posts'))
 const ProtectedRoutes = lazy(() => import('./shared/components/ProtectedRoutes'))
 const Profile = lazy(() => import('./infrastructure/ui/profile/profile')) 
