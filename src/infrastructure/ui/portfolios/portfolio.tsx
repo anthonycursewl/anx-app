@@ -4,12 +4,10 @@ import { useState } from 'react'
 import { useGlobalState } from '../../../shared/utils/GlobalState'
 // Objects 
 import { skills } from './objects/skills'
-import { Routes } from './objects/routes'
 import { bitter, forcegym } from './objects/images'
 
 // components
 import CardSkill from './components/CardSkill'
-import RouteLine from './components/RouteLine'
 import SliderImages from './components/SliderImages'
 
 
@@ -134,13 +132,9 @@ export default function Portfolio() {
                         </div>
 
                         <div className='anx--roadmap-diagram'>
-                            <img src={imgTest} alt="Image Test"/>
-
-                            {Routes.map((route, index) => (
-                                <RouteLine key={index} title={route.title} description={route.description} />
-                            ))} 
-                            <RouteLine isContent={false}/>                          
+                            <img src={imgTest} alt="Image Test"/>                       
                              
+                             I'll add it this soon.
                         </div>
                     </div>
 
