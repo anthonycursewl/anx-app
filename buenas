@@ -1,0 +1,41 @@
+[33m3bf28c7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m [fix] error in the build --fix
+[33ma9bcc02[m [fix] error in the build
+[33meb50ba3[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m * --fix
+[33m5f2df0d[m [refactor] change folder's structure. Delete components folder in the UI folder.
+[33m16a8e47[m *
+[33m2744e6f[m * --same
+[33mffcfa32[m [refactor] folder's structure
+[33m294ece3[m *
+[33m50987f2[m refactor
+[33mc91c5c2[m *
+[33m129b6cf[m *
+[33m41e522f[m [refactor] change imports
+[33m286625a[m [add] relatice routes --pending
+[33m761b541[m Merge branch 'main' of https://github.com/anthonycursewl/anx-app
+[33m6a1f516[m Update dev dependencies
+[33m7e3e5f2[m Update .env.example
+[33mdb90bc6[m Merge branch 'main' of https://github.com/anthonycursewl/anx-app
+[33m0140056[m *
+[33m552ab9f[m Update README.md
+[33mddc3300[m README.md update
+[33m570ca6a[m [api] Change API
+[33mce1e9e5[m *
+[33m68bba6e[m *
+[33md79b676[m *
+[33m0f6ab44[m *
+[33m89915f2[m layout fix
+[33m2b75c4d[m *
+[33m9476502[m [layout] some modifications in the layout. Pending refactor.
+[33mae77460[m [prod] change db and stuff like that
+[33m68aaebb[m *
+[33m58557bf[m Merge branch 'main' of https://github.com/anthonycursewl/anx-app
+[33m38f81c5[m [change] component loader
+[33m775ecfc[m Update README.md
+[33ma99e04d[m change favicon and CardSkill component
+[33mf5b3ecf[m [change] Some text in the app has been changed
+[33m9341837[m [change] In the interface
+[33meeb17f5[m [change] Domains allowed to point this api
+[33m7f1a3d3[m [change] Point to the API in production.
+[33mf73bfca[m [upload] files to launch anx's beta by Breadriuss
+[33mcbc30c9[m [upload] files to launch anx's beta by Breadriuss
+[33m23819c2[m First commit of Anx
