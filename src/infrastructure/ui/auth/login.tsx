@@ -2,11 +2,11 @@ import { FormEvent, RefObject, useRef, useState } from 'react'
 import './login.css'
 import { Link } from 'react-router-dom'
 // Svgs
-import PasswordIcon from '../../../../assets/svgs/login/PasswordIcon'
-import EmailIcon from '../../../../assets/svgs/login/EmailIcon'
+import PasswordIcon from '../../../assets/svgs/login/PasswordIcon'
+import EmailIcon from '../../../assets/svgs/login/EmailIcon'
 // Services
-import { useFetch } from '../../../api/useFetch'
-import { API_URL } from '../../../../config/anx.config.breadriuss'
+import { useFetch } from '../../api/useFetch'
+import { API_URL } from '../../../config/anx.config.breadriuss'
 // hooks 
 import { useNavigate } from 'react-router-dom'
 
