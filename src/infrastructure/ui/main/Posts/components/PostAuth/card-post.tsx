@@ -21,6 +21,7 @@ import { parseText } from '../../../../../../shared/services/parseText'
 
 // Interfaces
 import { CardPostProps } from '../../../../../../shared/interfaces/ICardPost'
+import { InfoPost } from '../../../../../../shared/interfaces/IPost'
 
 export default function CardPost({ post, setSelectedPost }: CardPostProps) {
     const [timePassed, setTimePassed] = useState<string>('')
@@ -49,8 +50,13 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
         textRef ? textRef.current!.innerHTML = cleanText : null    
     }, [])
 
+    const handleOnClickPost = (post: InfoPost) => {
+        setSelectedPost(post)
+        nav(`/post/${post.id}/status`)
+    }
+
     return (
-        <div className='user-post' onClick={() => {nav(`/post/status/${post.id}/info`)}}>
+        <div className='user-post' onClick={() => {handleOnClickPost(post)}}>
             <div className='user-profile'>
                 <img src={post.users.user_profile[0].avatar_url} alt="Profile Picture" />
             </div>

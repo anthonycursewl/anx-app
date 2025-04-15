@@ -18,10 +18,10 @@ export default function UserPosts() {
     const [loading, setLoading] = useState<boolean>(false)
 
     const getPosts = async () => {
+        if (posts.length > 0) return
         const { data, error } = await secureFetch(`${API_URL}/posts/list`, { method: 'GET', body: null }, setLoading)
 
         if  (error) {
-            console.log(error)
             return 
         }
 

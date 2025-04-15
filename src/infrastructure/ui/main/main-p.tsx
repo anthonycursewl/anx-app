@@ -1,5 +1,5 @@
 import './main-p.css'
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom'
+import { Link, Outlet, useLocation, useParams, ScrollRestoration } from 'react-router-dom'
 
 // Svgs
 import HomeIcon from '../../../assets/svgs/side-nav/HomeIcon'
@@ -92,7 +92,7 @@ export default function MainP() {
             <div className='main-info-side'>
                 <div className='main-info-side-container'>
                     <div className='main-info-side-logo'>
-                        <img src="https://www.breadriuss.com/logo_recortado.png" alt="Breadriuss Logo" />
+                        <p>Anx</p>
                     </div>
 
                     <div className='main-info-side-nav'>
@@ -140,6 +140,7 @@ export default function MainP() {
                 </div>
                 
                 <Outlet /> 
+                {/* <ScrollRestoration /> */}
             </div>
 
             <div className='main-aside-info'>

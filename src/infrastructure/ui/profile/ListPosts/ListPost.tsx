@@ -48,7 +48,12 @@ export default function ListPost({ id }: { id: string }) {
 
     return (
         <>
-            {loading ? <div className="loading-spin"></div> : posts.map((post: InfoPost) => <CardPost key={post.id} post={post} setSelectedPost={setSelectedPost} />)}
+            {loading ? 
+                <div className="loading-spin"></div> : 
+            posts.map((post: InfoPost) => 
+                <CardPost key={post.id} post={post} setSelectedPost={setSelectedPost} />
+            )}
+
             <PostEdit post={selectedPost}/>
             <ModalConfirm options={{ postInfo: selectedPost, title: 'Are you sure you want to delete this post?', description: "Youn can't undo this action", onConfirm: handleDeletePost, onCancel: () => {}}}/>
         </>

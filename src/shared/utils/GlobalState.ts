@@ -5,10 +5,9 @@ import { InfoPost } from "../interfaces/IPost";
 import { IUser } from "../interfaces/IUser";
 import { ITypeNotification } from "../interfaces/ITypeNotification";
 import { getCookie } from "../services/getCookie";
+import { IUserProfile } from "../../infrastructure/ui/profile/types/IUserProfile";
 
 const cookie = getCookie('InfoUser')
-
-
 
 interface GlobalState { 
     isAuthenticated: boolean | null;
@@ -32,7 +31,9 @@ interface GlobalState {
     somethingChanged: boolean;
     setSomethingChanged: (somethingChanged: boolean) => void;
     isEditingProfile: boolean;
-    setIsEditingProfile: (isEditingProfile: boolean) => void
+    setIsEditingProfile: (isEditingProfile: boolean) => void;
+    profile: IUserProfile;
+    setProfile: (profile: IUserProfile) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -52,10 +53,25 @@ export const useGlobalState = create<GlobalState>((set) => ({
     setIsEditing: (isEditing: boolean) => set({ isEditing }),
     notis: Array<ITypeNotification>(),
     setNotis: (notis: ITypeNotification[]) => set({ notis }),
-    selectedPost: {} as InfoPost,
+    selectedPost: {
+        id: 'loaded',
+        content: '',
+        created_at: '',
+        updated_at: '',
+        images_url: [],
+        users: {
+            id: '',
+            username: '',
+            name: '',
+            is_verified: false,
+            user_profile: [{ avatar_url: '' }]
+        }
+    },
     setSelectedPost: (selectedPost: InfoPost) => set({ selectedPost }),
     somethingChanged: false,
     setSomethingChanged: (somethingChanged: boolean) => set({ somethingChanged }),
     isEditingProfile: false,
-    setIsEditingProfile: (isEditingProfile: boolean) => set({ isEditingProfile })
+    setIsEditingProfile: (isEditingProfile: boolean) => set({ isEditingProfile }),
+    profile: { id: 'loaded', bio: '', avatar_url: '', banner_url: '', location: '', websites_urls: [], user_id: '', users: { id: '', username: '', name: '', email: '', role_id: '', is_verified: false, created_at: '' } },
+    setProfile: (profile: IUserProfile) => set({ profile }),
 }))

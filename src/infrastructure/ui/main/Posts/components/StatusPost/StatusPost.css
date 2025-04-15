@@ -215,3 +215,18 @@
 }
 
 /* Comments style */
+
+/* Error container */
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    padding-top: 5rem;
+    gap: .5rem;
+    color: #a3a3a3;
+    font-size: .9rem;
+}

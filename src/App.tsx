@@ -36,13 +36,13 @@ export default function App() {
               <Route path='' element={<Profile />}/>
             </Route>
 
-            <Route path='/post/status/:id_post' element={ 
+            <Route path='/post/:id_post' element={ 
               <ProtectedRoutes>
                   <MainP />
                 </ProtectedRoutes>
             }>
 
-                <Route path='info' element={<StatusPost />}/>
+                <Route path='status' element={<StatusPost />}/>
             </Route>
 
             <Route path='/about/anthony' element={<Portfolio />}/>

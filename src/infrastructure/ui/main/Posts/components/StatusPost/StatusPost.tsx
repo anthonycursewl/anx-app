@@ -25,23 +25,28 @@ import { useGlobalState } from '../../../../../../shared/utils/GlobalState'
 
 export default function StatusPost() {
     const { id_post } = useParams()
-    const [loading, setLoading] = useState<boolean>(true)
-    const [post, setPost] = useState<InfoPost>({} as InfoPost)
+    const { setIsEditing, setNotis, notis, setIsConfirming, isAuthenticated, selectedPost } = useGlobalState()
+    const [post, setPost] = useState<InfoPost>(selectedPost)
+    const [loading, setLoading] = useState<boolean>(false)
+    const [error, setError] = useState<string | null>(null)
     const [showStatusOptions, setStatusOptions] = useState<boolean>(false)
-    const { setIsEditing, setNotis, notis, setIsConfirming, isAuthenticated } = useGlobalState()
     const nav = useNavigate()
 
     const getPostById = async () => {
+        if (!id_post) {
+            return nav('/feed')
+        }
+
+        if (post.id !== 'loaded') return
+
         const { data, error } = await secureFetch(`${API_URL}/posts/get/${id_post}`, { method: 'GET', body: null, stringify: false, content_type: 'application/json' }, setLoading) 
 
         if (error) {
+            setError(error)
             setNotis([...notis, { message: error || "Error getting post", type: "error", options: { isLoading: true } }])
         }
 
         if (data) {
-            if (data.length === 0) {
-                return nav('/feed')
-            }
             setPost(data)
         }
     }
@@ -70,8 +75,9 @@ export default function StatusPost() {
                 </span>
                 <span>Post</span>
             </div> 
+
             {
-            !loading ?
+            !loading && !error ?
             <>
                 <div className='status-post-content'>
                 <div className='status-post-front'>
@@ -143,10 +149,22 @@ export default function StatusPost() {
                 <PostEdit post={post!} />
                 <ModalConfirm options={{ title: 'Are you sure you want to delete this post?', description: "You can't undo this action", onConfirm: handleDeletePost, onCancel: () => {}, postInfo: post! }}/>
             </>
-            : 
+            : null
+            }
+
+            {
+            loading &&
             <div className='loading-container'>
                 <div className='loading-spin'></div>
             </div>
+            }
+
+            {
+                error && 
+                <div className='error-container'>
+                    <span>{error}</span>
+                    <span>This could be caused by a broken link. Go to feed.</span>
+                </div>
             }
 
 
