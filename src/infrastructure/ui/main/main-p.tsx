@@ -1,4 +1,5 @@
 import './main-p.css'
+// @ts-ignore
 import { Link, Outlet, useLocation, useParams, ScrollRestoration } from 'react-router-dom'
 
 // Svgs
