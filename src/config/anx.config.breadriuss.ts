@@ -7,4 +7,6 @@ const config = {
     url: 'http://localhost:3002'
 }
 
+export const APP_NAME = 'Anx' 
+
 export const API_URL = `${config.url}/${config.type}/${config.entity}/${config.api_version}`;

@@ -12,6 +12,7 @@ import ProfileLittleCard from './components/profile-little-card'
 import { useGlobalState } from '../../../shared/utils/GlobalState'
 // @ts-ignore
 import { IUser } from '../../../../shared/interfaces/IUser'
+import { APP_NAME } from '../../../config/anx.config.breadriuss'
 
 
 export default function MainP() {
@@ -93,7 +94,7 @@ export default function MainP() {
             <div className='main-info-side'>
                 <div className='main-info-side-container'>
                     <div className='main-info-side-logo'>
-                        <p>Anx</p>
+                        <span id='logo-app-anx'>{APP_NAME}</span>
                     </div>
 
                     <div className='main-info-side-nav'>
@@ -141,7 +142,7 @@ export default function MainP() {
                 </div>
                 
                 <Outlet /> 
-                {/* <ScrollRestoration /> */}
+                <ScrollRestoration />
             </div>
 
             <div className='main-aside-info'>
