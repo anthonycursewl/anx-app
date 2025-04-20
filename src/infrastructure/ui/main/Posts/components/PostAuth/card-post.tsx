@@ -23,7 +23,7 @@ import { parseText } from '../../../../../../shared/services/parseText'
 import { CardPostProps } from '../../../../../../shared/interfaces/ICardPost'
 import { InfoPost } from '../../../../../../shared/interfaces/IPost'
 
-export default function CardPost({ post, setSelectedPost }: CardPostProps) {
+export default function CardPost({ post, setSelectedPost, style }: CardPostProps) {
     const [timePassed, setTimePassed] = useState<string>('')
     const textRef = useRef<HTMLSpanElement>(null)
     const [isShowOptions, setIsShowOptions] = useState<boolean>(false)
@@ -56,7 +56,7 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
     }
 
     return (
-        <div className='user-post' onClick={() => {handleOnClickPost(post)}}>
+        <div className='user-post' onClick={() => {handleOnClickPost(post)}} style={style}>
             <div className='user-profile'>
                 <img src={post.users.user_profile[0].avatar_url} alt="Profile Picture" />
             </div>
@@ -128,7 +128,6 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
                             <span onClick={(e) => {
                                     e.stopPropagation()
                                     setIsShowOptions(!isShowOptions)
-                                    console.log()
                                 }}>
                                 <ThreePointsIcon />
                             </span>
@@ -143,7 +142,7 @@ export default function CardPost({ post, setSelectedPost }: CardPostProps) {
 
                 <div className='user-post-image'>
                     {post.images_url[0] && 
-                        <img src={post.images_url[0]} alt="Image Post" loading='lazy'/>
+                        <img src={post.images_url[0]} alt={`${post.users.name}'s post`} loading='lazy' />
                     }
                 </div>
             </div>

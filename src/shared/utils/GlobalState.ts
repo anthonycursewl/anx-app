@@ -26,14 +26,16 @@ interface GlobalState {
     setIsEditing: (isEditing: boolean) => void;   
     notis: ITypeNotification[];
     setNotis: (notis: Array<ITypeNotification>) => void;
-    selectedPost: InfoPost;
-    setSelectedPost: (selectedPost: InfoPost) => void;
+    selectedPost: InfoPost | null;
+    setSelectedPost: (selectedPost: InfoPost | null) => void;
     somethingChanged: boolean;
     setSomethingChanged: (somethingChanged: boolean) => void;
     isEditingProfile: boolean;
     setIsEditingProfile: (isEditingProfile: boolean) => void;
     profile: IUserProfile;
     setProfile: (profile: IUserProfile) => void;
+    currentPage: number;
+    setCurrentPage: (currentPage: number) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -67,11 +69,13 @@ export const useGlobalState = create<GlobalState>((set) => ({
             user_profile: [{ avatar_url: '' }]
         }
     },
-    setSelectedPost: (selectedPost: InfoPost) => set({ selectedPost }),
+    setSelectedPost: (selectedPost: InfoPost | null) => set({ selectedPost }),
     somethingChanged: false,
     setSomethingChanged: (somethingChanged: boolean) => set({ somethingChanged }),
     isEditingProfile: false,
     setIsEditingProfile: (isEditingProfile: boolean) => set({ isEditingProfile }),
     profile: { id: 'loaded', bio: '', avatar_url: '', banner_url: '', location: '', websites_urls: [], user_id: '', users: { id: '', username: '', name: '', email: '', role_id: '', is_verified: false, created_at: '' } },
     setProfile: (profile: IUserProfile) => set({ profile }),
+    currentPage: 1,
+    setCurrentPage: (currentPage: number) => set({ currentPage })
 }))
