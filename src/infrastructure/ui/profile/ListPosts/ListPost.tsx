@@ -16,6 +16,7 @@ export default function ListPost({ id }: { id: string }) {
     const { setSelectedPost, selectedPost, setSomethingChanged, somethingChanged } = useGlobalState()
 
     // Pagination
+    // @ts-ignore
     const [pagination, setPagination] = useState<{ take: number, skip: number }>({ take: 10, skip: 1 })
 
     const getPosts = async () => {

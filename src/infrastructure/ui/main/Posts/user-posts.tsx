@@ -104,6 +104,7 @@ export default function UserPosts() {
 
     }, [isLoadingInitial, isLoadingMore, hasMore, currentPage, fetchPostsPage, isRefreshing]);
 
+    // @ts-ignore
     const handleRefresh = useCallback(async () => {
         if (isLoadingInitial || isLoadingMore || isRefreshing) {
             return;
