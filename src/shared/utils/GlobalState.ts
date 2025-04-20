@@ -74,7 +74,7 @@ export const useGlobalState = create<GlobalState>((set) => ({
     setSomethingChanged: (somethingChanged: boolean) => set({ somethingChanged }),
     isEditingProfile: false,
     setIsEditingProfile: (isEditingProfile: boolean) => set({ isEditingProfile }),
-    profile: { id: 'loaded', bio: '', avatar_url: '', banner_url: '', location: '', websites_urls: [], user_id: '', users: { id: '', username: '', name: '', email: '', role_id: '', is_verified: false, created_at: '' } },
+    profile: { id: '', bio: '', avatar_url: '', banner_url: '', location: '', websites_urls: [], user_id: '', users: { id: '', username: '', name: '', email: '', role_id: '', is_verified: false, created_at: '' } },
     setProfile: (profile: IUserProfile) => set({ profile }),
     currentPage: 1,
     setCurrentPage: (currentPage: number) => set({ currentPage })

@@ -26,7 +26,7 @@ import { useGlobalState } from '../../../../../../shared/utils/GlobalState'
 export default function StatusPost() {
     const { id_post } = useParams()
     const { setIsEditing, setNotis, notis, setIsConfirming, isAuthenticated, selectedPost } = useGlobalState()
-    const [post, setPost] = useState<InfoPost>(selectedPost)
+    const [post, setPost] = useState<InfoPost>(selectedPost || { id: '', content: '', created_at: '', updated_at: '', images_url: [], users: { id: '', name: '', username: '', is_verified: false,user_profile: [{ avatar_url: '' }] }})
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
     const [showStatusOptions, setStatusOptions] = useState<boolean>(false)
