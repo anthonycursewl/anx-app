@@ -24,6 +24,7 @@ export default function Profile() {
     const { setIsEditingProfile, profile, setProfile } = useGlobalState()
 
 
+
     const fetchUser = async () => {
         if (profile.id !== 'loaded') return
 

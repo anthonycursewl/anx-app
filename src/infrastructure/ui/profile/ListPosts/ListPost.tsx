@@ -15,8 +15,11 @@ export default function ListPost({ id }: { id: string }) {
     const [loading, setLoading] = useState<boolean>(false)
     const { setSelectedPost, selectedPost, setSomethingChanged, somethingChanged } = useGlobalState()
 
+    // Pagination
+    const [pagination, setPagination] = useState<{ take: number, skip: number }>({ take: 10, skip: 1 })
+
     const getPosts = async () => {
-        const { data, error } = await secureFetch(`${API_URL}/posts/list/user/${id}`, { method: 'GET', body: null }, setLoading)
+        const { data, error } = await secureFetch(`${API_URL}/posts/list/user/${id}?skip=${pagination.skip}&take=${pagination.take}`, { method: 'GET', body: null }, setLoading)
 
         if (error) {
             console.log(error)
@@ -29,7 +32,7 @@ export default function ListPost({ id }: { id: string }) {
     }
 
     const handleDeletePost = async () => {  
-        const { data, error } = await secureFetch(`${API_URL}/posts/delete/${selectedPost.id}`, { method: 'DELETE', body: null, stringify: false }, () => {})
+        const { data, error } = await secureFetch(`${API_URL}/posts/delete/${selectedPost?.id}`, { method: 'DELETE', body: null, stringify: false }, () => {})
 
         if (error) {
             console.log(error)
@@ -54,8 +57,8 @@ export default function ListPost({ id }: { id: string }) {
                 <CardPost key={post.id} post={post} setSelectedPost={setSelectedPost} />
             )}
 
-            <PostEdit post={selectedPost}/>
-            <ModalConfirm options={{ postInfo: selectedPost, title: 'Are you sure you want to delete this post?', description: "Youn can't undo this action", onConfirm: handleDeletePost, onCancel: () => {}}}/>
+            <PostEdit post={selectedPost as InfoPost}/>
+            <ModalConfirm options={{ postInfo: selectedPost!, title: 'Are you sure you want to delete this post?', description: "Youn can't undo this action", onConfirm: handleDeletePost, onCancel: () => {}}}/>
         </>
     )
 }
