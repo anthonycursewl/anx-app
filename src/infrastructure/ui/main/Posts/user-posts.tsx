@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { ScrollRestoration } from 'react-router-dom';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import './user-posts.css';
 
