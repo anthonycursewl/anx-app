@@ -4,7 +4,7 @@ const config = {
     api_version: 'v1',
     entity: 'anx',
     type: 'api',
-    url: 'https://anxapi.breadriuss.com'
+    url: 'http://localhost:3002',
 }
 
 export const APP_NAME = 'Anx' 

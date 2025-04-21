@@ -26,7 +26,6 @@ export default function Profile() {
 
 
     const fetchUser = async () => {
-        if (profile.id !== 'loaded') return
 
         const { data, error } = await useFetch(`${API_URL}/user/profile/${username?.split('@')[1]}`, 'GET', null, setLoading)
         if (error) {
