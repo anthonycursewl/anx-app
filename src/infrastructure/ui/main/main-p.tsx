@@ -141,8 +141,7 @@ export default function MainP() {
                     }
                 </div>
                 
-                <Outlet /> 
-                <ScrollRestoration />
+                <Outlet />
             </div>
 
             <div className='main-aside-info'>

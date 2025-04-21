@@ -31,7 +31,7 @@ export default function CardPost({ post, setSelectedPost, style }: CardPostProps
     const nav = useNavigate()
     
     // Global State
-    const { infoUser, setIsConfirming, setIsEditing } = useGlobalState()  
+    const { infoUser, setIsConfirming, setIsEditing, setScrollPosition } = useGlobalState()  
     useEffect(() => {
         setTimePassed(calculateTimePassed(post.created_at))
 
@@ -53,6 +53,7 @@ export default function CardPost({ post, setSelectedPost, style }: CardPostProps
     const handleOnClickPost = (post: InfoPost) => {
         setSelectedPost(post)
         nav(`/post/${post.id}/status`)
+        setScrollPosition(document.documentElement.scrollTop)
     }
 
     return (
@@ -136,7 +137,7 @@ export default function CardPost({ post, setSelectedPost, style }: CardPostProps
                     </div>
 
                     <div className='user-post-description'>
-                        <span ref={textRef} onClick={(e) => e.stopPropagation()}></span>
+                        <span ref={textRef}></span>
                     </div>
                 </div>
 

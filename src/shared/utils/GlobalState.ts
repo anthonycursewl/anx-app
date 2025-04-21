@@ -36,6 +36,10 @@ interface GlobalState {
     setProfile: (profile: IUserProfile) => void;
     currentPage: number;
     setCurrentPage: (currentPage: number) => void;
+    scrollPosition: number;
+    setScrollPosition: (scrollPosition: number) => void;
+    hasMore: boolean;
+    setHasMore: (hasMore: boolean) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -77,5 +81,9 @@ export const useGlobalState = create<GlobalState>((set) => ({
     profile: { id: '', bio: '', avatar_url: '', banner_url: '', location: '', websites_urls: [], user_id: '', users: { id: '', username: '', name: '', email: '', role_id: '', is_verified: false, created_at: '' } },
     setProfile: (profile: IUserProfile) => set({ profile }),
     currentPage: 1,
-    setCurrentPage: (currentPage: number) => set({ currentPage })
+    setCurrentPage: (currentPage: number) => set({ currentPage }),
+    scrollPosition: 0,
+    setScrollPosition: (scrollPosition: number) => set({ scrollPosition }),
+    hasMore: true,
+    setHasMore: (hasMore: boolean) => set({ hasMore })
 }))

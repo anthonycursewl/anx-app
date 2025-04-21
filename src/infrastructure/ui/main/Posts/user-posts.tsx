@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { ScrollRestoration } from 'react-router-dom';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import './user-posts.css';
 
@@ -21,10 +22,7 @@ const ESTIMATED_ITEM_HEIGHT = 250;
 
 export default function UserPosts() {
     // Global State
-    const { notis, setNotis, setSelectedPost, selectedPost, posts, setPosts, currentPage, setCurrentPage } = useGlobalState();
-
-    // Pagination
-    const [hasMore, setHasMore] = useState<boolean>(true);
+    const { notis, setNotis, setSelectedPost, selectedPost, posts, setPosts, currentPage, setCurrentPage, scrollPosition, setHasMore, hasMore } = useGlobalState();
 
     // Loading states
     const [isLoadingInitial, setIsLoadingInitial] = useState<boolean>(true);
@@ -56,6 +54,8 @@ export default function UserPosts() {
     }, []);
 
     useEffect(() => {
+        if (posts.length > 0) return
+
         if (isRefreshing) return;
 
         let isMounted = true;
@@ -168,6 +168,12 @@ export default function UserPosts() {
         }
     }, [hasMore, isLoadingMore, loadMore, loaderRef]);
 
+    useEffect(() => {
+        if (scrollPosition > 0) {
+            window.scrollTo({ top: scrollPosition, behavior: 'auto' });
+        }
+    })
+
 
      // --- Delete Post ---
      const handleDeletePost = async () => {
@@ -215,13 +221,16 @@ export default function UserPosts() {
                                 {isLoaderRow ? (
                                     hasMore ? <div ref={loaderRef} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50px' }}><div className='loading-spin'></div></div> : null
                                 ) : post ? (
-                                    <CardPost post={post} setSelectedPost={setSelectedPost}/>
+                                    <>
+                                        <CardPost post={post} setSelectedPost={setSelectedPost}/>
+                                    </>
                                 ) : null}
                             </div>
                         );
                     })}
                 </div>
             </div>
+
             {!hasMore && posts.length > 0 && <div style={{ textAlign: 'center', padding: '10px', color: 'grey' }}>--</div>}
             {selectedPost && (
                <>
