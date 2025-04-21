@@ -26,7 +26,6 @@ export default function Profile() {
 
 
     const fetchUser = async () => {
-
         const { data, error } = await useFetch(`${API_URL}/user/profile/${username?.split('@')[1]}`, 'GET', null, setLoading)
         if (error) {
             setNotis([...notis, { message: "Error fetching user", type: "error", options: { isLoading: true } }])
@@ -35,9 +34,11 @@ export default function Profile() {
         }
 
         if (data) {
+            console.log(data)
             setProfile(data)
         }
     }
+
 
     const handleEditingProfile = () => {
         document.body.style.overflow = 'hidden'
@@ -108,8 +109,10 @@ export default function Profile() {
                         </div>
                     </div>
                 </div>
-
-                <ListPost id={profile.users.id}/>
+                {
+                profile.users.id &&
+                    <ListPost id={profile.users.id}/>
+                }
                 <EditProfile profile={profile}/>
             </>
             }
