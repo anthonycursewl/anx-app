@@ -20,6 +20,7 @@ export default function ListPost({ id }: { id: string }) {
     const [pagination, setPagination] = useState<{ take: number, skip: number }>({ take: 10, skip: 1 })
 
     const getPosts = async () => {
+        console.log(`Fetching posts for user ${id}`)
         const { data, error } = await secureFetch(`${API_URL}/posts/list/user/${id}?skip=${pagination.skip}&take=${pagination.take}`, { method: 'GET', body: null }, setLoading)
 
         if (error) {
@@ -28,6 +29,7 @@ export default function ListPost({ id }: { id: string }) {
         }
 
         if (data) {
+            console.log(data)
             setPosts(data)
         }
     }
