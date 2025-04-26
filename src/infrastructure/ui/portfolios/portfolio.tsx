@@ -35,8 +35,8 @@ export default function Portfolio() {
     }
 
     const imgTest = 'https://freepngimg.com/save/69350-decorative-magic-purple-light-beam-icon/690x460'
-
     const imgSquare = '/placeholder/square_idk.webp'
+    const imgToTestBackGroundInfo: string = "/portfolio/anx-background-img-creator.svg" 
 
     return (
         <section className='anx-show-portfolio'>
@@ -48,21 +48,25 @@ export default function Portfolio() {
 
                 <div className='anx-p-greetings'>
                     {/* <img src={profilePic} alt="Anthony Zerpa Profile Picture" /> */}
-                    <h1 id='anx-hello'>Hello👋🏻, I'm Anthony Zerpa, <br />a <span>Full-stack developer.</span></h1>
+                    <div className='anx-p-description anx-img-background'>
+                        <img src={imgToTestBackGroundInfo} alt="Anthony Zerpa's Background info" id='anx-img-background'/>
+                        <h1 id='anx-hello'>Hello👋🏻, I'm Anthony Zerpa, <br />a <span>Full-stack developer.</span></h1>
 
-                    <div className='anx-p-contact'>
-                        <a href="" download={true}>
-                            <img src="/icons/icon-cv.png" alt="CV Icon" />
-                            Download CV
-                        </a>
-                        <button onClick={copyToClipboard}>
-                            <img src="/icons/icon-email.png" alt="Email Icon" />
-                            zerpanthony.wx@breadriuss.com
-                        </button>
-                        <a href="https://github.com/anthonycursewl" target="_blank">
-                            <img src="/icons/icon-github.png" alt="GitHub Icon" />
-                        </a>
+                        <div className='anx-p-contact'>
+                            <a href="" download={true}>
+                                <img src="/icons/icon-cv.png" alt="CV Icon" />
+                                Download CV
+                            </a>
+                            <button onClick={copyToClipboard}>
+                                <img src="/icons/icon-email.png" alt="Email Icon" />
+                                zerpanthony.wx@breadriuss.com
+                            </button>
+                            <a href="https://github.com/anthonycursewl" target="_blank">
+                                <img src="/icons/icon-github.png" alt="GitHub Icon" />
+                            </a>
+                        </div>
                     </div>
+
 
                     <div className='anx-p-description'>
                         <p>I'm a Full-stack developer with a passion for creating innovative and user-friendly web applications. I've been practicing all these years and I'm always looking for new challenges to improve my skills.</p>
