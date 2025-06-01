@@ -35,12 +35,8 @@ export default function CardPost({ post, setSelectedPost, style }: CardPostProps
     useEffect(() => {
         setTimePassed(calculateTimePassed(post.created_at))
 
-        setInterval(() => {
-            setTimePassed(calculateTimePassed(post.created_at))
-        }, 60000);  
-
         return () => {
-            clearInterval(0);
+            setTimePassed(calculateTimePassed(post.created_at))
         }
     }, [post.created_at])
 
