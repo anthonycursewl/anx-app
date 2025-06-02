@@ -17,6 +17,15 @@ import PostEdit from './components/EditPost/PostEdit';
 import { InfoPost } from '../../../../shared/interfaces/IPost';
 
 const POSTS_PER_PAGE = 10;
+
+// ESTIMATED_ITEM_HEIGHT: Crucial for @tanstack/react-virtual's performance.
+// This value should be a reasonable average height (in pixels) of a single post item.
+// Inaccurate estimates, especially with highly variable item heights, can lead to:
+// - Jumpy scrolling behavior.
+// - Temporary blank spaces appearing while scrolling fast.
+// - Incorrect scrollbar size initially.
+// Consider verifying this value if virtualization feels off. The `measureElement` function
+// helps correct actual sizes, but a good estimate is key for initialization and perceived smoothness.
 const ESTIMATED_ITEM_HEIGHT = 250;
 
 export default function UserPosts() {
@@ -85,22 +94,29 @@ export default function UserPosts() {
         console.log('Loading more posts...');
         
         setIsLoadingMore(true);
-        const { data: newPosts, hasMore: moreData } = await fetchPostsPage(currentPage);
-        if (newPosts.length > 0) {
-            setPosts([...posts, ...newPosts]);
+        try {
+            const { data: newPosts, hasMore: moreDataFromFetch } = await fetchPostsPage(currentPage);
 
-            if (newPosts.length < POSTS_PER_PAGE) {
-                setHasMore(false);
+            if (newPosts.length > 0) {
+                setPosts([...posts, ...newPosts]);
             }
+
+            // If newPosts is empty AND moreDataFromFetch is false, it signifies a potential error
+            // or an empty fetch when we might have expected data. In this case, we don't change `hasMore`,
+            // allowing a retry if `hasMore` was previously true.
+            // In all other cases (new posts received, or API explicitly states moreDataFromFetch is true),
+            // we update `hasMore` based on `moreDataFromFetch`.
+            if (!(newPosts.length === 0 && !moreDataFromFetch)) {
+                setHasMore(moreDataFromFetch);
+            }
+
+            // Only increment currentPage if the API indicates there's more to fetch next time.
+            if (moreDataFromFetch) {
+                setCurrentPage(currentPage + 1);
+            }
+        } finally {
+            setIsLoadingMore(false);
         }
-
-        setHasMore(moreData);
-        if (moreData) {
-            setCurrentPage(currentPage + 1);
-        }
-
-        setIsLoadingMore(false);
-
     }, [isLoadingInitial, isLoadingMore, hasMore, currentPage, fetchPostsPage, isRefreshing]);
 
     // @ts-ignore
@@ -148,7 +164,7 @@ export default function UserPosts() {
 
         const options = {
             root: null,
-            rootMargin: '0px',
+            rootMargin: '200px 0px 200px 0px',
             threshold: 0.1,
         }
 
